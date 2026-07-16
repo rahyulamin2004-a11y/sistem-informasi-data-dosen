@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Sistem Informasi Data Dosen</title>
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="assets/logo-baru-unsam-fix.png"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header class="top-header">
+
+      <div class="header-content">
+        <h1>Sistem Arsip Digital </h1>
+
+        <p>
+          Data Dokumen Dosen 
+        </p>
+      </div>
+
+      <div class="logo-box">
+        <img
+          src="assets/logo-baru-unsam-fix.png"
+          alt="Logo Universitas Samudra"
+          class="logo-kampus"
+        >
+      </div>
+
+    </header>
+
+
+    <!-- FORM -->
+    <form id="lecturerForm">
+
+      <!-- DATA DOSEN -->
+      <section class="data-card">
+
+        <h2>Data </h2>
+
+        <div class="form-group">
+          <label for="namaDosen">
+            Nama <span>*</span>
+          </label>
+
+          <input
+            type="text"
+            id="namaDosen"
+            name="namaDosen"
+            placeholder="Masukkan Nama Dosen"
+            autocomplete="name"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="nip">
+            NIP/NIPPPK <span>*</span>
+          </label>
+
+          <input
+            type="text"
+            id="nip"
+            name="nip"
+            placeholder="Masukkan NIP"
+            inputmode="numeric"
+            autocomplete="off"
+            required
+          >
+        </div>
+
+      </section>
+
+
+      <!-- LACI DOKUMEN -->
+      <section
+        class="accordion-container"
+        id="accordionContainer"
+      ></section>
+
+
+      <!-- TOMBOL -->
+      <div class="action-buttons">
+
+        <button
+          type="submit"
+          class="upload-button"
+          id="uploadButton"
+        >
+          Simpan &amp; Upload
+        </button>
+
+        <button
+          type="button"
+          class="reset-button"
+          id="resetButton"
+        >
+          Reset Form
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+
+  <!-- NOTIFIKASI -->
+  <div class="toast" id="toast">
+    <span class="toast-icon" id="toastIcon">✓</span>
+    <span id="toastMessage"></span>
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

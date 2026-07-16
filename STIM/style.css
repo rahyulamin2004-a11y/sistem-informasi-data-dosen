@@ -1,0 +1,910 @@
+/* ==============================
+   RESET & DASAR
+============================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #1c5ed4;
+  --primary-hover: #144eb5;
+  --text-dark: #101b30;
+  --text-medium: #5f6672;
+  --border: #dce5f2;
+  --input-background: #edf3fc;
+  --white: #ffffff;
+  --danger: #e00000;
+  --success: #15945b;
+  --shadow: 0 4px 14px rgba(29, 52, 84, 0.055);
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--text-dark);
+  background: #f4f7fb;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  border: none;
+}
+
+.container {
+  width: calc(100% - 32px);
+  max-width: 1180px;
+  margin: 18px auto 44px;
+  padding: 18px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(29, 52, 84, 0.07);
+}
+
+
+/* ==============================
+   HEADER
+============================== */
+
+.top-header {
+  min-height: 155px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+  padding: 24px 26px;
+  background: var(--primary);
+  border-radius: 16px;
+}
+
+.header-content h1 {
+  margin-bottom: 6px;
+  color: var(--white);
+  font-size: clamp(25px, 2.7vw, 31px);
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.header-content p {
+  color: var(--white);
+  font-size: clamp(14px, 1.6vw, 16px);
+  line-height: 1.45;
+}
+
+.logo-box {
+  width: 150px;
+  height: 110px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background: var(--white);
+  border-radius: 16px;
+}
+
+.logo-kampus {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+/* ==============================
+   DATA DOSEN
+============================== */
+
+.data-card {
+  margin-bottom: 24px;
+  padding: 24px 24px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.data-card h2 {
+  margin-bottom: 20px;
+  font-size: 27px;
+  font-weight: 750;
+}
+
+.form-group + .form-group {
+  margin-top: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.form-group label span {
+  color: var(--danger);
+}
+
+.form-group input {
+  width: 100%;
+  height: 52px;
+  padding: 0 15px;
+  color: var(--text-dark);
+  background: var(--input-background);
+  border: 1px solid #c6d5ea;
+  border-radius: 10px;
+  outline: none;
+  font-size: 17px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.form-group input::placeholder {
+  color: #6c7076;
+}
+
+.form-group input:focus {
+  background: var(--white);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(28, 94, 212, 0.1);
+}
+
+
+/* ==============================
+   ACCORDION / LACI UTAMA
+============================== */
+
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.accordion-item {
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.accordion-header {
+  width: 100%;
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  color: var(--text-dark);
+  background: var(--white);
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.accordion-header:hover {
+  background: #fbfdff;
+}
+
+.accordion-header:focus-visible {
+  box-shadow: inset 0 0 0 3px rgba(28, 94, 212, 0.15);
+}
+
+.section-icon {
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  font-size: 26px;
+}
+
+.section-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.section-text h3 {
+  margin-bottom: 3px;
+  font-size: 23px;
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.section-text p {
+  color: #313844;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+
+/* PANAH LACI MODEL CHEVRON BULAT */
+
+.accordion-arrow {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #edf4ff;
+  border: 1px solid #d5e4fb;
+  border-radius: 50%;
+}
+
+.accordion-arrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2.5px solid #1768df;
+  border-bottom: 2.5px solid #1768df;
+  transform: rotate(-45deg);
+  transition: transform 0.22s ease;
+}
+
+.accordion-item.open .accordion-arrow::before {
+  transform: rotate(45deg);
+}
+
+
+/* ==============================
+   ISI LACI
+============================== */
+
+.accordion-content {
+  display: none;
+  padding: 2px 18px 18px;
+  background: #fcfdff;
+}
+
+.accordion-item.open .accordion-content {
+  display: block;
+}
+
+.document-list {
+  width: 97%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+
+/* Kotak isi dibuat lebih kecil dari kotak judul utama */
+
+.document-row {
+  min-height: 78px;
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(320px, 420px);
+  align-items: center;
+  gap: 18px;
+  padding: 10px 13px;
+  background: var(--white);
+  border: 1px solid #e1e8f2;
+  border-radius: 13px;
+  box-shadow: 0 2px 8px rgba(29, 52, 84, 0.03);
+}
+
+.document-info {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.document-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 21px;
+}
+
+.document-text {
+  min-width: 0;
+}
+
+.document-text h4 {
+  margin-bottom: 2px;
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.document-text p {
+  color: var(--text-medium);
+  font-size: 13.5px;
+  line-height: 1.35;
+}
+
+
+/* ==============================
+   INPUT FILE + TOMBOL HAPUS
+============================== */
+
+.file-input {
+  display: none;
+}
+
+.file-control {
+  width: 100%;
+  min-height: 46px;
+  display: grid;
+  grid-template-columns: 118px minmax(0, 1fr);
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid #cad6e7;
+  border-radius: 9px;
+  transition: grid-template-columns 0.2s ease;
+}
+
+.document-row.has-file .file-control {
+  grid-template-columns: 118px minmax(0, 1fr) 40px;
+}
+
+.file-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  color: var(--text-dark);
+  background: #f7f9fc;
+  border-right: 1px solid #cad6e7;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.file-button:hover {
+  color: var(--white);
+  background: var(--primary);
+}
+
+.file-name {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  padding: 8px 14px;
+  color: #656a73;
+  font-size: 14px;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-remove {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  min-width: 40px;
+  color: #d32626;
+  background: #fff1f1;
+  border-left: 1px solid #f0caca;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.file-remove:hover {
+  color: #ffffff;
+  background: #dc3434;
+}
+
+.document-row.has-file {
+  border-color: #75c99e;
+  background: #fbfffd;
+}
+
+.document-row.has-file .file-name {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.document-row.has-file .file-remove {
+  display: flex;
+}
+
+
+/* ==============================
+   WARNA IKON
+============================== */
+
+.color-blue {
+  background: #eaf2ff;
+}
+
+.color-green {
+  background: #e5f7ef;
+}
+
+.color-orange {
+  background: #fff0e7;
+}
+
+.color-purple {
+  background: #f1eaff;
+}
+
+.color-yellow {
+  background: #fff6d9;
+}
+
+.color-red {
+  background: #ffe9e9;
+}
+
+.color-cyan {
+  background: #e5f8fa;
+}
+
+.color-gray {
+  background: #edf1f6;
+}
+
+.color-pink {
+  background: #ffeaf4;
+}
+
+
+/* ==============================
+   KUALIFIKASI HORIZONTAL
+============================== */
+
+.education-horizontal .accordion-content {
+  padding: 4px 18px 18px;
+}
+
+.education-horizontal .document-list {
+  width: 98%;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.education-horizontal .document-row {
+  min-height: 146px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 9px;
+  padding: 11px 9px;
+  border-radius: 12px;
+}
+
+.education-horizontal .document-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+}
+
+.education-horizontal .document-icon {
+  width: 43px;
+  height: 43px;
+  font-size: 21px;
+  color: #1768df;
+}
+
+.education-horizontal .document-text h4 {
+  margin: 0;
+  font-size: 16px;
+  text-align: center;
+}
+
+.education-horizontal .document-text p {
+  display: none;
+}
+
+.education-horizontal .file-control {
+  min-height: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 5px;
+  overflow: visible;
+  background: transparent;
+  border: none;
+}
+
+.education-horizontal .document-row.has-file .file-control {
+  grid-template-columns: minmax(0, 1fr) 32px;
+}
+
+.education-horizontal .file-button {
+  min-height: 35px;
+  grid-column: 1 / -1;
+  padding: 6px 8px;
+  color: #155fcf;
+  background: #edf4ff;
+  border: 1px solid #c8d9f2;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.education-horizontal .file-button::before {
+  content: "☁";
+  margin-right: 6px;
+  font-size: 14px;
+}
+
+.education-horizontal .file-button:hover {
+  color: #ffffff;
+  background: #1c65d8;
+  border-color: #1c65d8;
+}
+
+.education-horizontal .file-name {
+  min-height: 25px;
+  display: block;
+  padding: 4px 2px;
+  font-size: 11.5px;
+  text-align: center;
+}
+
+.education-horizontal .file-remove {
+  width: 32px;
+  min-width: 32px;
+  height: 28px;
+  align-self: center;
+  border: 1px solid #f0caca;
+  border-radius: 7px;
+  font-size: 18px;
+}
+
+
+/* ==============================
+   TOMBOL AKSI
+============================== */
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.upload-button,
+.reset-button {
+  width: 100%;
+  min-height: 52px;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.upload-button {
+  color: var(--white);
+  background: #2472e7;
+}
+
+.upload-button:hover {
+  background: var(--primary-hover);
+}
+
+.reset-button {
+  color: #0f1724;
+  background: #e8eef8;
+}
+
+.reset-button:hover {
+  background: #dce5f3;
+}
+
+.upload-button:active,
+.reset-button:active {
+  transform: scale(0.998);
+}
+
+.upload-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+
+/* ==============================
+   TOAST
+============================== */
+
+.toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+  max-width: 390px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 16px;
+  color: var(--white);
+  background: #172238;
+  border-radius: 10px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(18px);
+  transition: 0.3s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.toast.success {
+  background: #147749;
+}
+
+.toast.error {
+  background: #c73838;
+}
+
+.toast-icon {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  font-weight: 800;
+}
+
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 1050px) {
+  .container {
+    max-width: 940px;
+  }
+
+  .document-row {
+    grid-template-columns: 1fr;
+    gap: 11px;
+  }
+
+  .education-horizontal .document-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    width: calc(100% - 18px);
+    margin: 9px auto 28px;
+    padding: 10px;
+    border-radius: 14px;
+  }
+
+  .top-header {
+    min-height: 125px;
+    padding: 18px;
+  }
+
+  .logo-box {
+    width: 96px;
+    height: 82px;
+    padding: 8px;
+  }
+
+  .data-card {
+    padding: 18px;
+  }
+
+  .data-card h2 {
+    font-size: 23px;
+  }
+
+  .form-group label {
+    font-size: 16px;
+  }
+
+  .form-group input {
+    height: 48px;
+    font-size: 16px;
+  }
+
+  .accordion-header {
+    min-height: 78px;
+    padding: 13px 14px;
+    gap: 11px;
+  }
+
+  .section-icon {
+    width: 47px;
+    height: 47px;
+    font-size: 23px;
+  }
+
+  .section-text h3 {
+    font-size: 19px;
+  }
+
+  .section-text p {
+    font-size: 13px;
+  }
+
+  .accordion-arrow {
+    width: 32px;
+    height: 32px;
+  }
+
+  .accordion-content {
+    padding: 2px 10px 12px;
+  }
+
+  .document-list {
+    width: 100%;
+  }
+
+  .document-row {
+    min-height: 72px;
+    padding: 10px;
+  }
+
+  .file-control {
+    grid-template-columns: 105px minmax(0, 1fr);
+  }
+
+  .document-row.has-file .file-control {
+    grid-template-columns: 105px minmax(0, 1fr) 36px;
+  }
+
+  .file-button {
+    font-size: 14px;
+  }
+
+  .file-name {
+    padding: 7px 10px;
+    font-size: 13px;
+  }
+
+  .file-remove {
+    width: 36px;
+    min-width: 36px;
+  }
+
+  .education-horizontal .document-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .education-horizontal .accordion-content {
+    padding: 3px 10px 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .top-header {
+    position: relative;
+    min-height: 138px;
+    align-items: flex-start;
+  }
+
+  .header-content {
+    padding-top: 14px;
+    padding-right: 62px;
+  }
+
+  .header-content h1 {
+    font-size: 21px;
+  }
+
+  .header-content p {
+    font-size: 12.5px;
+  }
+
+  .logo-box {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 66px;
+    height: 66px;
+    border-radius: 11px;
+  }
+
+  .section-text h3 {
+    font-size: 17px;
+  }
+
+  .section-text p {
+    font-size: 12px;
+  }
+
+  .document-info {
+    align-items: flex-start;
+  }
+
+  .document-text h4 {
+    font-size: 15px;
+  }
+
+  .document-text p {
+    font-size: 12.5px;
+  }
+
+  .file-control {
+    grid-template-columns: 95px minmax(0, 1fr);
+  }
+
+  .document-row.has-file .file-control {
+    grid-template-columns: 95px minmax(0, 1fr) 34px;
+  }
+
+  .education-horizontal .document-list {
+    grid-template-columns: 1fr;
+  }
+
+  .toast {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+  }
+}
+
+/* ===================================
+   STATUS FILE SUDAH DIUPLOAD
+=================================== */
+
+.document-row.uploaded {
+  background: #f4fff9;
+  border-color: #42bd7d;
+}
+
+.document-row.uploaded .file-name {
+  color: #078a4b;
+  font-weight: 700;
+}
+
+.document-row.uploaded .file-control {
+  border-color: #83d5aa;
+}
+
+.document-row.uploaded .file-button {
+  color: #0b6f43;
+  background: #e9f9f1;
+}
+
+.document-row.uploaded .file-button:hover {
+  color: #ffffff;
+  background: #15945b;
+}
+
+.education-horizontal
+.document-row.uploaded {
+  background: #f4fff9;
+  border-color: #42bd7d;
+}
